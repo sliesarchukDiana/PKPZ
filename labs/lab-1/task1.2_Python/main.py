@@ -5,7 +5,7 @@ def check_point(x, y):
     diagonal= x
 
     if x >= 0: #right side
-        inside = parabola > y > 0 and y < diagonal
+        inside = parabola > y > 0
         on_border = y == diagonal or y == parabola
     else: #left side (x<= 0)
         inside = diagonal < y < parabola and y <= 0
