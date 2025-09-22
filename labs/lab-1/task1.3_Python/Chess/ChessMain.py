@@ -2,7 +2,7 @@
 from os import access
 
 import pygame as p
-from Chess import ChessEngine
+import ChessEngine
 
 
 WIDTH = HEIGHT = 512
