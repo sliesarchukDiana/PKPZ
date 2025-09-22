@@ -21,7 +21,7 @@ def check_point(x, y):
 def generate_shots(n):
     shots = []
     for _ in range(n):
-        x = round(random.uniform(-2, 2), 2)   # координати від -5 до 5
+        x = round(random.uniform(-2, 2), 2)   # координати від -2 до 2
         y = round(random.uniform(-2, 2), 2)
         shots.append((x, y))
     return shots
