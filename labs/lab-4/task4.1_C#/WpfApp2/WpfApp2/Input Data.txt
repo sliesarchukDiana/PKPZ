@@ -1,0 +1,15 @@
+123 Main St;Residential;5;20;60;10
+45 Central Ave;Commercial;3;6;30;5
+77 Old Town Rd;Residential;2;4;75;0
+19 River Blvd;Industrial;1;2;55;15
+10 Maple Ave;Residential;9;40;48;12
+66 Oak Street;Commercial;4;12;52;8
+9 Pine Crescent;Residential;3;9;27;6
+88 Factory Ln;Industrial;2;5;80;20
+24 City Square;Office;6;24;65;9
+5 Old Bridge Rd;Warehouse;1;1;90;5
+14 Elm Street;Residential;8;32;51;7
+32 Green Hill;Residential;2;6;20;3
+7 Meadow Way;Commercial;5;18;70;12
+41 Riverbank Dr;Industrial;3;8;45;10
+12 Harbor Ave;Office;7;30;60;15
