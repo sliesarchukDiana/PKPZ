@@ -1,0 +1,46 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Організації" Height="600" Width="500">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Vertical" Margin="10">
+            <TextBlock Text="Оберіть тип організації:" Margin="0,0,0,5"/>
+            <ComboBox x:Name="OrganizationTypeComboBox" SelectionChanged="OrganizationTypeComboBox_SelectionChanged">
+                <ComboBoxItem Content="Страхова компанія"/>
+                <ComboBoxItem Content="Завод"/>
+            </ComboBox>
+
+            <TextBlock Text="Назва організації:" Margin="0,10,0,0"/>
+            <TextBox x:Name="NameTextBox"/>
+
+            <TextBlock Text="Адреса:" Margin="0,10,0,0"/>
+            <TextBox x:Name="AddressTextBox"/>
+
+            <TextBlock Text="Кількість працівників:" Margin="0,10,0,0"/>
+            <TextBox x:Name="EmployeesTextBox"/>
+
+            <StackPanel x:Name="InsuranceFields" Visibility="Collapsed">
+                <TextBlock Text="Тип страхування:" Margin="0,10,0,0"/>
+                <TextBox x:Name="InsuranceTypeTextBox"/>
+                <TextBlock Text="Кількість клієнтів:" Margin="0,10,0,0"/>
+                <TextBox x:Name="ClientCountTextBox"/>
+            </StackPanel>
+
+            <StackPanel x:Name="FactoryFields" Visibility="Collapsed">
+                <TextBlock Text="Тип виробництва:" Margin="0,10,0,0"/>
+                <TextBox x:Name="ProductionTypeTextBox"/>
+                <TextBlock Text="Обсяг продукції (шт/міс):" Margin="0,10,0,0"/>
+                <TextBox x:Name="ProductionVolumeTextBox"/>
+            </StackPanel>
+
+            <Button x:Name="ShowButton" Content="Показати інформацію" Margin="0,15,0,0" Click="ShowButton_Click"/>
+        </StackPanel>
+
+        <TextBlock x:Name="OutputTextBlock" Grid.Row="1" Margin="10,10,10,0" TextWrapping="Wrap" FontWeight="Bold"/>
+    </Grid>
+</Window>

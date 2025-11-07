@@ -1,0 +1,27 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Літаки" Height="450" Width="600">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Vertical" Margin="0,0,0,10">
+            <TextBlock Text="Модель літака:"/>
+            <TextBox x:Name="ModelTextBox" Width="200"/>
+
+            <TextBlock Text="Години польотів:" Margin="0,10,0,0"/>
+            <TextBox x:Name="HoursTextBox" Width="200"/>
+
+            <TextBlock Text="Надійність (у %):" Margin="0,10,0,0"/>
+            <TextBox x:Name="ReliabilityTextBox" Width="200"/>
+
+            <Button Content="Додати літак" Margin="0,10,0,0" Width="200" Click="AddPlane_Click"/>
+            <Button Content="Сортувати" Margin="0,10,0,0" Width="200" Click="SortPlanes_Click"/>
+        </StackPanel>
+
+        <ListBox x:Name="PlanesListBox" Grid.Row="1" FontSize="14"/>
+    </Grid>
+</Window>
