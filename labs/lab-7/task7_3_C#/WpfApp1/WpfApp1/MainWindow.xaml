@@ -1,0 +1,59 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Журнал перезавантажень сервера" Height="600" Width="900">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        
+        <GroupBox Header="Додати запис" Margin="0,0,0,10">
+            <StackPanel Orientation="Horizontal" Margin="10">
+                <StackPanel Margin="5">
+                    <TextBlock Text="Дата (ДДММРРРР)" />
+                    <TextBox x:Name="DateInput" Width="100" />
+                </StackPanel>
+                <StackPanel Margin="5">
+                    <TextBlock Text="Час (ГГ:ХХ:СС)" />
+                    <TextBox x:Name="TimeInput" Width="100" />
+                </StackPanel>
+                <StackPanel Margin="5">
+                    <TextBlock Text="Причина" />
+                    <ComboBox x:Name="ReasonInput" Width="160">
+                        <ComboBoxItem Content="Установка ПЗ"/>
+                        <ComboBoxItem Content="Профілактика"/>
+                        <ComboBoxItem Content="Збій роботи"/>
+                    </ComboBox>
+                </StackPanel>
+                <StackPanel Margin="5">
+                    <TextBlock Text="Користувач"/>
+                    <TextBox x:Name="UserInput" Width="120" />
+                </StackPanel>
+                <Button Content="Додати" Width="100" Margin="10,0,0,0" Click="AddRecord_Click"/>
+            </StackPanel>
+        </GroupBox>
+        
+        <DataGrid x:Name="LogsGrid" Grid.Row="1" AutoGenerateColumns="False" Margin="0,10"
+                  CanUserAddRows="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Дата" Binding="{Binding Date}" Width="*"/>
+                <DataGridTextColumn Header="Час" Binding="{Binding Time}" Width="*"/>
+                <DataGridTextColumn Header="Причина" Binding="{Binding Reason}" Width="*"/>
+                <DataGridTextColumn Header="Користувач" Binding="{Binding User}" Width="*"/>
+                <DataGridTextColumn Header="Днів тому" Binding="{Binding DaysAgo}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
+            <Button Content="Події вночі" Width="120" Height="50" Margin="5" Click="NightEvents_Click"/>
+            <Button Content="К-сть профілактик між датами" Width="220" Height="50" Margin="5" Click="CountBetweenDates_Click"/>
+            <Button Content="Останнє перезавантаження" Width="200" Height="50" Margin="5" Click="LastReboot_Click"/>
+            <Button Content="Пошук по даті" Width="150" Height="50" Margin="5" Click="SearchByDate_Click"/>
+        </StackPanel>
+        
+        <TextBlock x:Name="ResultText" Grid.Row="2" Margin="0,100,0,0" 
+                   TextAlignment="Center" FontWeight="Bold" Foreground="DarkBlue" FontSize="14"/>
+    </Grid>
+</Window>
