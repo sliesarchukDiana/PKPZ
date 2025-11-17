@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WpfApp2")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+76f3eecac11681a74c7c501aaa2c6ae30c9b37d7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e153c3755847e00e9b58fc2029a4ce509e01dbea")]
 [assembly: System.Reflection.AssemblyProductAttribute("WpfApp2")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WpfApp2")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
