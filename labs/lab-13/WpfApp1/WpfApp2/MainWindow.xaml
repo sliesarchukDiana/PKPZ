@@ -1,0 +1,36 @@
+﻿<Window x:Class="OrdinalRecognizerApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Ordinal Number Recognizer (Lab 1.2)" Height="500" Width="800"
+        WindowStartupLocation="CenterScreen">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/> <RowDefinition Height="*"/>    <RowDefinition Height="Auto"/> <RowDefinition Height="*"/>    <RowDefinition Height="Auto"/> </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Margin="0,0,0,10">
+            <Button x:Name="BtnLoad" Content="Завантажити файл" Width="150" Height="30" Click="BtnLoad_Click" Margin="0,0,10,0"/>
+            <Button x:Name="BtnSave" Content="Зберегти звіт" Width="150" Height="30" Click="BtnSave_Click" IsEnabled="False"/>
+        </StackPanel>
+
+        <GroupBox Header="Вхідний текст" Grid.Row="1" Margin="0,0,0,10">
+            <TextBox x:Name="TxtInput" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" 
+                     IsReadOnly="True" Padding="5" FontSize="14"/>
+        </GroupBox>
+
+        <TextBlock Text="Розпізнані порядкові числівники:" Grid.Row="2" FontWeight="Bold" Margin="0,0,0,5"/>
+
+        <DataGrid x:Name="GridResults" Grid.Row="3" AutoGenerateColumns="False" IsReadOnly="True" 
+                  HeadersVisibility="Column" BorderThickness="1" BorderBrush="Gray">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Текст (знайдено)" Binding="{Binding Text}" Width="200"/>
+                <DataGridTextColumn Header="Шаблон (Текст – Значення)" Binding="{Binding FormattedString}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <StatusBar Grid.Row="4" Margin="0,10,0,0">
+            <StatusBarItem>
+                <TextBlock x:Name="LblCount" Text="Кількість знайдених числівників: 0" FontWeight="Bold"/>
+            </StatusBarItem>
+        </StatusBar>
+    </Grid>
+</Window>

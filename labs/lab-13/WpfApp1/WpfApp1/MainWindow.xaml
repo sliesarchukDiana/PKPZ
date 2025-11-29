@@ -1,0 +1,46 @@
+﻿<Window x:Class="NumberRecognizerApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Number Recognizer (Lab 1.1)" Height="600" Width="900"
+        WindowStartupLocation="CenterScreen">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="200"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Margin="0,0,0,10">
+            <Button x:Name="BtnLoad" Content="Завантажити файл" Width="150" Height="30" Click="BtnLoad_Click" Margin="0,0,10,0"/>
+            <Button x:Name="BtnSave" Content="Зберегти результат" Width="150" Height="30" Click="BtnSave_Click" IsEnabled="False"/>
+        </StackPanel>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <GroupBox Header="Вхідний текст (з файлу)" Grid.Column="0">
+                <TextBox x:Name="TxtInput" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" IsReadOnly="True" Padding="5"/>
+            </GroupBox>
+
+            <GroupBox Header="Результат (після заміни)" Grid.Column="2">
+                <TextBox x:Name="TxtOutput" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" IsReadOnly="True" Padding="5" FontWeight="Bold"/>
+            </GroupBox>
+        </Grid>
+
+        <TextBlock Text="Деталі розпізнавання:" Grid.Row="2" Margin="0,10,0,5" FontWeight="Bold"/>
+
+        <DataGrid x:Name="GridResults" Grid.Row="3" AutoGenerateColumns="False" IsReadOnly="True" HeadersVisibility="Column">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Розпізнаний текст" Binding="{Binding Text}" Width="150"/>
+                <DataGridTextColumn Header="Початковий індекс" Binding="{Binding Start}" Width="120"/>
+                <DataGridTextColumn Header="Кінцевий індекс" Binding="{Binding End}" Width="120"/>
+                <DataGridTextColumn Header="Розпізнане значення" Binding="{Binding Value}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>
