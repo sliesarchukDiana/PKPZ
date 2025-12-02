@@ -7,7 +7,6 @@ if __name__ == "__main__":
     print(f"Результат: {filter_long_words(test_1)}")
     print("-" * 20)
 
-    # Тест 2
     test_2 = ["cat", "dog", "fish", "go", "egg"]
     print(f"Вхід: {test_2}")
     print(f"Результат: {filter_long_words(test_2)}")
